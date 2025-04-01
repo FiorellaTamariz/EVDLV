@@ -33,3 +33,19 @@ button {
 button:hover {
     background-color: #cc0000;
 }
+
+#preguntaLink {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#preguntaLink:hover {
+    background-color: #cc0000;
+}
