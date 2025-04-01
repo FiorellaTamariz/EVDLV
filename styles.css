@@ -1,19 +1,19 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
     background: url('login.jpg') no-repeat center center/cover;
     color: white;
-    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-.login-box {
-    background: rgba(51, 51, 51, 0.8);
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 300px;
+    margin: 100px auto;
 }
 
 select, input, button {
@@ -31,21 +31,5 @@ button {
 }
 
 button:hover {
-    background-color: #cc0000;
-}
-
-#preguntaLink {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    background-color: #ff4444;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#preguntaLink:hover {
     background-color: #cc0000;
 }
