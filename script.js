@@ -20,6 +20,7 @@ function login() {
     } else if (user !== "") {
         message.innerText = "Se ha iniciado sesión correctamente.";
         message.style.color = "green";
+        setTimeout(() => { window.location.href = "haz_tu_pregunta.html"; }, 1500);
     } else {
         message.innerText = "Por favor, selecciona un usuario.";
         message.style.color = "red";
