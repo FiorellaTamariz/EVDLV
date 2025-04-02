@@ -3,83 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas - El Valor de la Verdad</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ff0000, #0000ff);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 500px;
-            margin: auto;
-        }
-        select, textarea, button {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        button {
-            background: red;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+    <title>El Valor de la Verdad - Preguntas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>HAZ TUS PREGUNTAS PARA EL VALOR DE LA VERDAD</h1>
+    <nav class="navbar">
+        <span class="title">EL VALOR DE LA VERDAD</span>
+        <div class="nav-buttons">
+            <button onclick="location.href='preguntas.html'">📖 Preguntas</button>
+            <button onclick="location.href='admin.html'">⚙️ Administración</button>
+            <button onclick="location.href='valor_verdad.html'">🌍 El Valor de la Verdad</button>
+            <button onclick="location.href='game_start.html'">🎮 Game Start</button>
+            <button class="logout" onclick="location.href='index.html'">↪️ Salir</button>
+        </div>
+    </nav>
     <div class="container">
-        <label>Quién pregunta</label>
-        <select id="quienPregunta">
-            <option value="">Selecciona tu nombre</option>
-            <option value="Sergio">Sergio</option>
-            <option value="Carmen">Carmen</option>
-            <option value="Mary">Mary</option>
-            <option value="Chelo">Chelo</option>
-            <option value="Fiorella">Fiorella</option>
-            <option value="Dani">Dani</option>
-            <option value="Nico">Nico</option>
-            <option value="Franco">Franco</option>
-            <option value="Lu">Lu</option>
-            <option value="Sebas">Sebas</option>
-        </select>
-        <label>A quién va dirigida la pregunta</label>
-        <select id="paraQuien">
-            <option value="">Selecciona un participante</option>
-            <option value="Sergio">Sergio</option>
-            <option value="Carmen">Carmen</option>
-            <option value="Mary">Mary</option>
-            <option value="Chelo">Chelo</option>
-            <option value="Fiorella">Fiorella</option>
-            <option value="Dani">Dani</option>
-            <option value="Nico">Nico</option>
-            <option value="Franco">Franco</option>
-            <option value="Lu">Lu</option>
-            <option value="Sebas">Sebas</option>
-        </select>
-        <textarea id="pregunta" placeholder="Escribe tu pregunta aquí..."></textarea>
-        <button onclick="enviarPregunta()">Enviar Pregunta</button>
+        <h2>HAZ TUS PREGUNTAS PARA EL VALOR DE LA VERDAD</h2>
+        <div class="content">
+            <div class="participants">
+                <h3>Participantes</h3>
+                <ul id="participantsList">
+                    <li>Sergio <span class="score">0</span></li>
+                    <li>Carmen <span class="score">0</span></li>
+                    <li>Mary <span class="score">0</span></li>
+                    <li>Chelo <span class="score">0</span></li>
+                    <li>Fiorella <span class="score">0</span></li>
+                    <li>Dani <span class="score">0</span></li>
+                    <li>Nico <span class="score">0</span></li>
+                    <li>Franco <span class="score">0</span></li>
+                    <li>Lu <span class="score">0</span></li>
+                    <li>Sebas <span class="score">0</span></li>
+                </ul>
+            </div>
+            <div class="question-form">
+                <h3>Haz tu pregunta</h3>
+                <label>Quién pregunta</label>
+                <input type="text" value="Fiorella" disabled>
+                <label>A quién va dirigida la pregunta</label>
+                <select>
+                    <option>Selecciona un participante</option>
+                    <option>Sergio</option>
+                    <option>Carmen</option>
+                    <option>Mary</option>
+                    <option>Chelo</option>
+                    <option>Dani</option>
+                    <option>Nico</option>
+                    <option>Franco</option>
+                    <option>Lu</option>
+                    <option>Sebas</option>
+                </select>
+                <label>Tu pregunta</label>
+                <textarea placeholder="Escribe tu pregunta aquí..."></textarea>
+                <button>Enviar Pregunta</button>
+            </div>
+        </div>
     </div>
-    <script>
-        function enviarPregunta() {
-            let quien = document.getElementById("quienPregunta").value;
-            let para = document.getElementById("paraQuien").value;
-            let pregunta = document.getElementById("pregunta").value;
-            
-            if (!quien || !para || !pregunta) {
-                alert("Por favor, completa todos los campos.");
-                return;
-            }
-            
-            alert("Pregunta enviada con éxito a " + para);
-        }
-    </script>
 </body>
 </html>
