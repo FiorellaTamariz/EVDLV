@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas - El Valor de la Verdad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff0000, #0000ff);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+        select, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: red;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>HAZ TUS PREGUNTAS PARA EL VALOR DE LA VERDAD</h1>
+    <div class="container">
+        <label>Quién pregunta</label>
+        <select id="quienPregunta">
+            <option value="">Selecciona tu nombre</option>
+            <option value="Sergio">Sergio</option>
+            <option value="Carmen">Carmen</option>
+            <option value="Mary">Mary</option>
+            <option value="Chelo">Chelo</option>
+            <option value="Fiorella">Fiorella</option>
+            <option value="Dani">Dani</option>
+            <option value="Nico">Nico</option>
+            <option value="Franco">Franco</option>
+            <option value="Lu">Lu</option>
+            <option value="Sebas">Sebas</option>
+        </select>
+        <label>A quién va dirigida la pregunta</label>
+        <select id="paraQuien">
+            <option value="">Selecciona un participante</option>
+            <option value="Sergio">Sergio</option>
+            <option value="Carmen">Carmen</option>
+            <option value="Mary">Mary</option>
+            <option value="Chelo">Chelo</option>
+            <option value="Fiorella">Fiorella</option>
+            <option value="Dani">Dani</option>
+            <option value="Nico">Nico</option>
+            <option value="Franco">Franco</option>
+            <option value="Lu">Lu</option>
+            <option value="Sebas">Sebas</option>
+        </select>
+        <textarea id="pregunta" placeholder="Escribe tu pregunta aquí..."></textarea>
+        <button onclick="enviarPregunta()">Enviar Pregunta</button>
+    </div>
+    <script>
+        function enviarPregunta() {
+            let quien = document.getElementById("quienPregunta").value;
+            let para = document.getElementById("paraQuien").value;
+            let pregunta = document.getElementById("pregunta").value;
+            
+            if (!quien || !para || !pregunta) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+            
+            alert("Pregunta enviada con éxito a " + para);
+        }
+    </script>
+</body>
+</html>
