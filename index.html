@@ -3,36 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>El Valor de la Verdad - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff0000, #0000ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+        select, input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: red;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>EL VALOR DE LA VERDAD</h1>
-        <label for="user">Selecciona tu usuario:</label>
-        <select id="user" onchange="verificarFiorella()">
-            <option value="">-- Selecciona --</option>
+        <h2>EL VALOR DE LA VERDAD</h2>
+        <p>Ingresa para participar</p>
+        <label>Nombre de Usuario</label>
+        <select id="userSelect" onchange="showPassword()">
+            <option value="">Selecciona tu nombre</option>
+            <option value="Fiorella">Fiorella</option>
             <option value="Sergio">Sergio</option>
             <option value="Carmen">Carmen</option>
             <option value="Mary">Mary</option>
             <option value="Chelo">Chelo</option>
-            <option value="Fiorella">Fiorella</option>
             <option value="Dani">Dani</option>
             <option value="Nico">Nico</option>
             <option value="Franco">Franco</option>
             <option value="Lu">Lu</option>
             <option value="Sebas">Sebas</option>
         </select>
-        
-        <div id="password-container" style="display: none;">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password">
-        </div>
-        
-        <button onclick="login()">Iniciar Sesión</button>
-        <p id="message"></p>
+        <input type="password" id="passwordInput" placeholder="Contraseña" style="display: none;">
+        <button onclick="login()">Ingresar</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function showPassword() {
+            let user = document.getElementById('userSelect').value;
+            let passwordInput = document.getElementById('passwordInput');
+            passwordInput.style.display = (user === 'Fiorella') ? 'block' : 'none';
+        }
+
+        function login() {
+            let user = document.getElementById('userSelect').value;
+            let password = document.getElementById('passwordInput').value;
+            
+            if (user === "Fiorella" && password !== "FIORELLA123456") {
+                alert("Contraseña incorrecta");
+                return;
+            }
+            
+            if (user === "Fiorella") {
+                window.location.href = "admin.html";
+            } else if (user) {
+                window.location.href = "preguntas.html";
+            } else {
+                alert("Selecciona un usuario");
+            }
+        }
+    </script>
 </body>
 </html>
-
